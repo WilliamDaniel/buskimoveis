@@ -13,7 +13,7 @@
     </servlet>
     <servlet>
         <servlet-name>Visitante</servlet-name>
-        <servlet-class>br.com.buskimoveis.model.entity.Visitante</servlet-class>
+        <servlet-class>br.com.buskimoveis.model.entity.Usuario</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>spring mvc</servlet-name>

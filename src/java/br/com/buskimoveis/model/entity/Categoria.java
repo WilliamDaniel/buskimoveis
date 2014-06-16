@@ -10,6 +10,7 @@ package br.com.buskimoveis.model.entity;
  *
  * @author Elessandra
  */
-public class Visitante extends Usuario{
-
+public enum Categoria {
+    NOME;
+    
 }
