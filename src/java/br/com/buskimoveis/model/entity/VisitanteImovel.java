@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author Elessandra
  */
-public class Visualizacao {
+public class VisitanteImovel {
     private Long id;
     private Date dataHora;
     private Visitante visitante;
