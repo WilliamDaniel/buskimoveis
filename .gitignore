@@ -5,3 +5,4 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
+/lib/LDSUtils/nbproject/private/
