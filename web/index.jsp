@@ -22,7 +22,7 @@
         <!-- Cabeçalho -->
         <div id="principal">
             <header id="header">
-                <h1 class="mensagem-header">
+                <h1 class="header-info">
                     <p>
                         Alguma dúvida sobre o sistema? Envie um <span class="glyphicon glyphicon-envelope"> 
                         </span> e-mail para <strong><a href="#">info@buskimoveis.com</a></a></strong>
@@ -52,7 +52,7 @@
                         <strong><p id="BI"></p></strong>
                     </div>
                     <ul class="lista-busca-uf">
-                        <form name="form-busca-home" method="post" action="BuscaSimpliesHome">
+                        <form name="form-busca-home">
                             <li>
                                 <select id="select-tipo">
                                     <option>Tipo</option>
@@ -61,34 +61,18 @@
                             <li>
                                 <select id="select-faixa-valor">
                                     <option>Faixa de valor</option>
-                                    <option> </option>
-                                    <option> </option>
-                                    <option> </option>
                                 </select>
                             </li>
                             <li>
                                 <select id="select-uf">
                                     <option>UF</option>
-                                    <option>SP</option>
-                                    <option>MG</option>
-                                    <option>RJ</option>
-                                    <option>RO</option>
                                 </select>
                             </li>
                             <li>
                                 <select id="select-cidade">
                                     <option>Cidade</option>
-                                    <option>Sta. Rita do Sapucaí</option>
-                                    <option>Pouso Alegre</option>
-                                    <option>Itajubá</option>
-                                    <option>Congonhal</option>
-                                    <option>Pedralva</option>
-                                    <option>Varginha</option>
-                                    <option>São Lourenço</option>
                                 </select>
                             </li>
-
-
                             <button type="submit" name="bt-form-select1" id="bt-form-select1">Buscar</button>
                         </form>
                     </ul>

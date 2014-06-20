@@ -18,7 +18,7 @@ import org.springframework.web.portlet.ModelAndView;
 @Controller
 public class ImobiliariaController {
     
-    @RequestMapping(value = "/Cadastro", method = RequestMethod.GET)
+    @RequestMapping(value = "/cadastro", method = RequestMethod.GET)
     public ModelAndView Cadastrar(){
         ModelAndView mv = new ModelAndView("imobiliaria/Cadastro");
         return mv;
