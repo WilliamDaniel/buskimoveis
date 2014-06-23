@@ -16,11 +16,12 @@ import org.springframework.web.portlet.ModelAndView;
  * Criei esse controller pra testar os links de uma página pra outra.
  */
 @Controller
+@RequestMapping(value = "/imobiliaria")
 public class ImobiliariaController {
     
-    @RequestMapping(value = "/cadastro", method = RequestMethod.GET)
-    public ModelAndView Cadastrar(){
-        ModelAndView mv = new ModelAndView("imobiliaria/Cadastro");
+    @RequestMapping(value = "/novo", method = RequestMethod.GET)
+    public ModelAndView cadastrar(){
+        ModelAndView mv = new ModelAndView("imobiliaria/novo");
         return mv;
     }
     
