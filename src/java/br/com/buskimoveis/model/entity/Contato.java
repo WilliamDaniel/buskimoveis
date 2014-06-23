@@ -17,7 +17,7 @@ public class Contato {
     private Date dataHora;
     private String assunto;    
     private Imovel imovel;
-    private VisitanteImovel visitanteImovel;
+    private Visualizacao visualizacao;
 
     public Long getId() {
         return id;
@@ -51,14 +51,12 @@ public class Contato {
         this.imovel = imovel;
     }
 
-    public VisitanteImovel getVisitanteImovel() {
-        return visitanteImovel;
+    public Visualizacao getVisualizacao() {
+        return visualizacao;
     }
 
-    public void setVisitanteImovel(VisitanteImovel visitanteImovel) {
-        this.visitanteImovel = visitanteImovel;
+    public void setVisualizacao(Visualizacao visualizacao) {
+        this.visualizacao = visualizacao;
     }
-    
-    
-    
+
 }
