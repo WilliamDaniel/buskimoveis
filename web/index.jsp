@@ -10,13 +10,13 @@
     <head>
         <meta charset=UTF-8">
         <title>Home</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />" />
         <!-- css principal -->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="<c:url value="/css/style.css" />" />
         <!-- jQuery -->
-        <script  src="js/jquery-2.1.0.js"></script>
+        <script  src="<c:url value="/js/jquery-2.1.0.js" />" ></script>
         <!-- jquery da home page -->
-        <script src="js/jquery-home.js"></script>
+        <script src="<c:url value="/js/jquery-home.js"/>" ></script>
     </head>
     <body>
         <!-- Cabeçalho -->
