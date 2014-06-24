@@ -24,7 +24,7 @@
             <header id="header">
                 <h1 class="header-info">
                     <p>
-                        Alguma dúvida sobre o sistema? Envie um <span class="glyphicon glyphicon-envelope"> 
+                        Tem alguma dúvida? Envie um <span class="glyphicon glyphicon-envelope"> 
                         </span> e-mail para <strong><a href="#">info@buskimoveis.com</a></a></strong>
                     </p>
                     <div class="icones-rs">

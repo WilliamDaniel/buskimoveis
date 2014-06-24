@@ -84,8 +84,10 @@ body{
     color: #089a88;
     text-decoration: none;
 }
+
 .mouse-over{
     background-color: #000;
+    color: #089a88;
 }
 
 .nouse.leave{
@@ -131,8 +133,6 @@ body{
     position: relative;
     bottom: 0px;
     top: 80px;
-
-
 }
 .lista-busca-uf select{
     background-color: transparent;

@@ -17,10 +17,10 @@ $(document).ready(function(){
 	});
 
 	$('.menu-navegacao div span').mouseover(function(){
-		$(this).css({'background-color':'#e2ede1'});
+            $(this).css({'background-color':'#000'});
 	});
 
 	$('.menu-navegacao div span').mouseleave(function(){
-		$(this).css({'background-color':'#fff'});
+            $(this).css({'background-color':'#fff'});
 	});
 });
