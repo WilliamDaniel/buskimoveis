@@ -20,6 +20,4 @@ public class ImobiliariaController {
         ModelAndView mv = new ModelAndView("imobiliaria/novo");
         return mv;
     }
-    
-
 }

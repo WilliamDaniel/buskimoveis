@@ -36,9 +36,9 @@
                     <div>
                         <span id="Home"><a href="#Home"><p>Home</p></a></span>
                         <span><a href="#"><p>O BuskImóveis</p></a></span>
-                        <span><a href="#"><p>Imobiliária</p></a></span>
+                        <span><a href="<c:url value="/imobiliaria/novo" />"><p>Imobiliária</p></a></span>
                         <span><a href="#"><p>Conrretor de Imóveis</p></a></span>
-                        <span><a href="#"><p>Cadastre-se</p></a></span>
+                        <span><a href="<c:url value="/visitante/novo" />"><p>Cadastre-se</p></a></span>
                         <span><a href="#"><p>Ajuda</p></a></span>
                     </div>
                 </nav>
