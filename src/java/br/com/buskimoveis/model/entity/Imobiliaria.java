@@ -12,7 +12,10 @@ import java.util.List;
  *
  * @author Elessandra
  */
-public class Imobiliaria extends Usuario{    
+public class Imobiliaria { 
+    private Long id;
+    private String email;
+    private String senha;
     private String razaoSocial;
     private String nomeFantasia;
     private String cnpj;
@@ -24,7 +27,7 @@ public class Imobiliaria extends Usuario{
     private String cep;
     private String complemento;    
     private List<Telefone> telefone;
-
+    
     public String getRazaoSocial() {
         return razaoSocial;
     }
@@ -112,4 +115,28 @@ public class Imobiliaria extends Usuario{
     public void setTelefone(List<Telefone> telefone) {
         this.telefone = telefone;
     }  
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }

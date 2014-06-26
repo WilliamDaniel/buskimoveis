@@ -7,6 +7,7 @@ package br.com.buskimoveis.model.dao;
 
 import br.com.buskimoveis.model.entity.Visitante;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -29,7 +30,7 @@ public class VisitanteDao {
     private DataSource dataSource; //dataSource definido no <bean> no arquivo de configuracao// objeto que vai me deixar mexer com o banco
 
     public List<Visitante> lerTodos() {
-        String query = "select * from visitante, usuario where usuario.id = visitante.usuario_fk";
+        String query = "select * from visitante";
         List<Visitante> visitantes = new ArrayList<>();
         try {
             Connection connection = dataSource.getConnection();
@@ -48,5 +49,17 @@ public class VisitanteDao {
             Logger.getLogger(VisitanteDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return visitantes;
+    }
+
+    public void salvar(Visitante visitante) throws SQLException {
+        String query = "insert into visitante(nome, email, senha, telefone) values(?,?,?,?)";
+        Connection connection = dataSource.getConnection();
+        PreparedStatement ps = connection.prepareStatement(query);
+        ps.setString(1, visitante.getNome());
+        ps.setString(2, visitante.getEmail());
+        ps.setString(3, visitante.getSenha());
+        ps.setString(4, visitante.getTelefone());
+        ps.execute();
+        connection.commit();
     }
 }

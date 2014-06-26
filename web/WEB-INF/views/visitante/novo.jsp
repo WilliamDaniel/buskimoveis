@@ -22,6 +22,17 @@
         <!-- jquery de cadastro -->
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Novo Visitante</h1>
+        <form action="<c:url value="/visitante" />" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" />
+            <label>Telefone</label>
+            <input type="text" name="telefone" />
+            <label>E-mail</label>
+            <input type="email" name="email" />
+            <label>Senha</label>
+            <input type="password" name="senha" />
+            <input type="submit" value="Cadastrar" />
+        </form>
     </body>
 </html>
