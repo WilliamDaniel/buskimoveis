@@ -40,8 +40,7 @@ public class VisitanteDao {
                 Visitante visitante = new Visitante();
                 visitante.setId(resultSet.getLong("id"));
                 visitante.setEmail(resultSet.getString("email"));
-                visitante.setSenha(resultSet.getString("senha"));
-                visitante.setSenhaConfirmacao(resultSet.getString("senha_confirmacao"));
+                visitante.setSenha(resultSet.getString("senha"));                
                 visitante.setNome(resultSet.getString("nome"));
                 visitante.setTelefone(resultSet.getString("telefone"));
                 visitantes.add(visitante);
@@ -53,14 +52,13 @@ public class VisitanteDao {
     }
 
     public void salvar(Visitante visitante) throws SQLException {
-        String query = "insert into visitante(nome, email, telefone, senha, senha_confirmacao) values(?,?,?,?,?)";
+        String query = "insert into visitante(nome, email, telefone, senha) values(?,?,?,?)";
         Connection connection = dataSource.getConnection();
         PreparedStatement ps = connection.prepareStatement(query);
         ps.setString(1, visitante.getNome());
         ps.setString(2, visitante.getEmail());
-        ps.setString(3, visitante.getSenha());
-        ps.setString(4, visitante.getTelefone());
-        ps.setString(5, visitante.getSenhaConfirmacao());
+        ps.setString(3, visitante.getTelefone());
+        ps.setString(4, visitante.getSenha());                
         ps.execute();
         connection.commit();
     }
