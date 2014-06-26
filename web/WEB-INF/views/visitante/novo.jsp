@@ -14,13 +14,13 @@
     <head>
         <meta charset=UTF-8" />
         <meta charset="utf-8"/>
-	<meta name="descriptio" content="Cadastro"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Cadastro</title>>
-	<link rel="stylesheet" href="<c:url value="/css/normalize.css" />" />
+        <meta name="descriptio" content="Cadastro"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Cadastro</title>>
+        <link rel="stylesheet" href="<c:url value="/css/normalize.css" />" />
         <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>" />
         <!-- css principal -->
-         <link rel="stylesheet" href="<c:url value="/style.cadastro.visitante.css"/>" />
+        <link rel="stylesheet" href="<c:url value="/style.cadastro.visitante.css"/>" />
         <!-- jQuery -->
         <script  src="<c:url value="/js/jquery-2.1.0.js"/>" ></script>
         <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
@@ -75,28 +75,53 @@
         <section class="container section" id="form-cadastro"><!-- /section -->
             <h1>Cadastro de pessoa física</h1>
 
-            <form class="form-group">
+            <form class="form-group" action="<c:url value="/visitante" />" method="post">
+                <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input name="nome" type="text" class="form-control" placeholder="Nome" />
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input name="telefone" type="tel" class="form-control" placeholder="Telefone" />
+                </div>
                 <div class="input-group">
                     <span class="input-group-addon">@&nbsp;</span>
-                    <input type="email" class="form-control" placeholder="E-mail" />
+                    <input name="email" type="email" class="form-control" placeholder="E-mail" />
                 </div>
-            </form>
-
-            <form class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">****</span>
-                    <input type="password" class="form-control" placeholder="Senha" />
+                    <input name="senha" type="password" class="form-control" placeholder="Senha" />
                 </div>
-            </form>
-
-            <form class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">****</span>
-                    <input type="password" class="form-control" placeholder="Confirme a Senha" />
+                    <input name="senha_confirmacao" type="password" class="form-control" placeholder="Confirme a Senha" />
                 </div>
+                <input type="submit" class="btn btn-default navbar-btn" value="Cadastrar" name="bt-confirmar" />
             </form>
-            <input type="submit" class="btn btn-default navbar-btn" value="Confirmar" name="bt-confirmar" />
 
+
+            <!-- <form class="form-group">
+                 <div class="input-group">
+                     <span class="input-group-addon">@&nbsp;</span>
+                     <input type="email" class="form-control" placeholder="E-mail" />
+                 </div>
+             </form>
+ 
+             <form class="form-group">
+                 <div class="input-group">
+                     <span class="input-group-addon">****</span>
+                     <input type="password" class="form-control" placeholder="Senha" />
+                 </div>
+             </form>
+ 
+             <form class="form-group">
+                 <div class="input-group">
+                     <span class="input-group-addon">****</span>
+                     <input type="password" class="form-control" placeholder="Confirme a Senha" />
+                 </div>
+             </form>
+             <input type="submit" class="btn btn-default navbar-btn" value="Confirmar" name="bt-confirmar" />
+            -->
         </section>
 
         <footer id="footer">
@@ -104,19 +129,5 @@
                 <p></p>
             </div>
         </footer>
-        <!--
-        <h1>Novo Visitante</h1>
-        <form action="<c:url value="/visitante" />" method="post">
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" />
-            <label>Telefone</label>
-            <input type="text" name="telefone" />
-            <label>E-mail</label>
-            <input type="email" name="email" />
-            <label>Senha</label>
-            <input type="password" name="senha" />
-            <input type="submit" value="Cadastrar" />
-        </form>
-        -->
     </body>
 </html>

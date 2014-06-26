@@ -14,9 +14,10 @@ public class Visitante {
     private Long id;
     private String email;
     private String senha;
+    private String senhaConfirmacao;
     private String nome;
     private String telefone;    
-    
+        
     public String getNome() {
         return nome;
     }
@@ -55,5 +56,13 @@ public class Visitante {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getSenhaConfirmacao() {
+        return senhaConfirmacao;
+    }
+
+    public void setSenhaConfirmacao(String senhaConfirmacao) {
+        this.senhaConfirmacao = senhaConfirmacao;
     }
 }
