@@ -1,0 +1,133 @@
+body{
+	background-image: url(../img/Casa.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: auto;
+	height: auto;
+	background-position: inherit;
+	margin: auto;
+}
+
+.page-header{
+	background-color: #fff;
+}
+
+.container{
+	position: absolute;
+
+}
+
+#form-cadastro{
+	margin-top: 10%;
+	width: 60%;
+	padding-top: 2%;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 2%;
+	background-color: rgba(0,0,0,0.6);
+	color: #fff;
+	position: relative;
+}
+
+.btn{
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 0px;
+	border-color: #fff;
+    width: 50%;
+    height: 10%;
+    bottom: 10%;
+    top: 10%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14pt;
+	outline: none;
+	padding: 1%;
+}
+
+.btn:hover{
+	background-color: #089a88;
+	outline-style: none;
+	color: #fff;
+}
+.btn:focus{
+	background-color: transparent;
+	color: #fff;
+}
+
+.footer{
+	background-color: #000;
+}
+
+.input-group span{
+	background-color: #089a88;
+	color: #fff;
+}
+
+.navbar.navbar-default{
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	background-color:#fff ;
+	border:0px;
+	border-radius: 0px;
+}
+.nav.navbar-nav li a{
+	color: #333;
+}
+
+.navbar.navbar-default#barra-info{
+	background-color: #089a88;
+	height: 15%;
+	padding: 0px;
+	margin: 0px;
+	border:0px;
+	border-radius: 0px;
+	color: #fff;
+	position: relative;
+}
+
+.nav.navbar-nav.navbar-right a{
+	position: relative;
+	margin-right: 15px;
+	margin-top: -50%;
+	color: #fff;
+	font-family: Verdana, Arial;
+	font-weight: bold;
+	font-size: 10pt;
+}
+.nav.navbar-nav.navbar-right a:hover{
+	color: #FFFF00;
+	font-family: Verdana, Arial;
+}
+
+p{
+	margin-left: 10%;
+	margin-top: 1%;
+}
+
+.input-group input{
+	border-radius:0px;
+}
+
+#bs-example-navbar-collapse-1 li{
+	font-size: 13pt;
+	font-weight: 700;
+	color: #111;
+	font-family: sans-serif;
+}
+#bs-example-navbar-collapse-1 li:hover{
+	background-color: #E9E9E9;
+	text-decoration: none;
+	list-style: none;
+}
+.navbar-brand h1{
+	font-size: 17pt;
+	padding: 4px;
+	margin-top: -7%;
+	box-shadow: 2px 2px 2px 0px;
+	font-family:fantasy;
+	color: #256553
+}
