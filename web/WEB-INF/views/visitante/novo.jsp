@@ -13,7 +13,6 @@
 <html>
     <head>
         <meta charset=UTF-8" />
-        <meta charset="utf-8"/>
         <meta name="descriptio" content="Cadastro"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Cadastro</title>>
