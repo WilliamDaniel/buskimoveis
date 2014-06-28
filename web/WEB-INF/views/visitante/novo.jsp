@@ -10,39 +10,37 @@
 <%@ taglib prefix="display" uri="http://displaytag.sf.net" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
-        <meta charset=UTF-8" />
-        <meta name="descriptio" content="Cadastro"/>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Cadastro"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Cadastro</title>>
+        <title>BuskImóveis - Cadastro</title>
+        <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />" />
         <link rel="stylesheet" href="<c:url value="/css/normalize.css" />" />
-        <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>" />
-        <!-- css principal -->
-        <link rel="stylesheet" href="<c:url value="/style.cadastro.visitante.css"/>" />
-        <!-- jQuery -->
-        <script  src="<c:url value="/js/jquery-2.1.0.js"/>" ></script>
-        <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
-        <!-- jquery de cadastro -->
+        <link rel="stylesheet" href="<c:url value="/css/style.cadastro.visitante.css" />" />
+
+        <script src="<c:url value="/js/jquery-1.11.1.js" />"></script>
+        <script src="<c:url value="/js/bootstrap.min.js" />"></script>
+        <script src="<c:url value="/js/jquery.cadastro.visitante.js" />"></script>
     </head>
     <body>
         <header id="header" class="">
-            <nav class="navbar navbar-default" role="navigation" id="barra-principal">
-
-                <nav class="navbar navbar-default" role="navigation" id="barra-info">
-                    <div class="container-fluid">
-                        <div class="row-fluid">
-                            <span class="span6">
-                                <p>Tem alguma dúvida? Envie um e-mail para <strong>info@buskimoveis.com</strong></p>
-                            </span>
-                            <span class="span6">
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="#">Entrar</a></li>
-                                </ul>
-                            </span>
-                        </div>
+            <nav class="navbar navbar-default" role="navigation" id="barra-info">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <span>
+                            <p>Tem alguma dúvida? Envie um e-mail para <strong>info@buskimoveis.com</strong></p>
+                        </span>
+                        <span>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Entrar</a></li>
+                            </ul>
+                        </span>
                     </div>
-                </nav>
+            </nav>
+
+            <nav class="navbar navbar-default" role="navigation" id="barra-principal">
 
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,11 +56,10 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav" id="menu-navegacao">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">O BuskImóveis</a></li>
                             <li><a href="#">Imobiliária</a></li>
-                            <li><a href="#">Corretor de Imóveis</a></li>
                             <li class="active"><a href="#">Cadastre-se</a></li>
                             <li><a href="#">Ajuda</a></li>
                         </ul>
@@ -74,59 +71,41 @@
         <section class="container section" id="form-cadastro"><!-- /section -->
             <h1>Cadastro de pessoa física</h1>
 
-            <form class="form-group" action="<c:url value="/visitante" />" method="post">
+            <form class="form-group" method="post" action="<c:url value="/visitante" />">
+
                 <div class="input-group">
-                    <span class="input-group-addon"></span>
-                    <input name="nome" type="text" class="form-control" placeholder="Nome" />
+                    <span class="input-group-addon">Aa&nbsp;</span>
+                    <input type="text" class="form-control input-validacao" placeholder="Nome" name="nome" />
                 </div>
+
                 <div class="input-group">
-                    <span class="input-group-addon"></span>
-                    <input name="telefone" type="tel" class="form-control" placeholder="Telefone" />
+                    <span class="input-group-addon">&nbsp;@&nbsp;</span>
+                    <input type="email" class="form-control input-validacao" placeholder="E-mail" name="email" />
                 </div>
+
                 <div class="input-group">
-                    <span class="input-group-addon">@&nbsp;</span>
-                    <input name="email" type="email" class="form-control" placeholder="E-mail" />
+                    <span class="input-group-addon">##&nbsp;</span>
+                    <input type="text" class="form-control input-validacao" placeholder="Telefone" name="telefone" />
                 </div>
+
+
                 <div class="input-group">
                     <span class="input-group-addon">****</span>
-                    <input name="senha" type="password" class="form-control" placeholder="Senha" />
+                    <input type="password" class="form-control input-validacao" placeholder="Senha" maxlength="200" name="senha" />
                 </div>
+
                 <div class="input-group">
                     <span class="input-group-addon">****</span>
-                    <input type="password" class="form-control" placeholder="Confirme a Senha" />
+                    <input type="password" class="form-control input-validacao" placeholder="Confirme a Senha" maxlength="200"  />
                 </div>
-                <input type="submit" class="btn btn-default navbar-btn" value="Cadastrar" name="bt-confirmar" />
+                <input type="submit" class="btn btn-default navbar-btn" value="Confirmar" name="bt-confirmar" id="bt-confirmar" />
             </form>
-
-
-            <!-- <form class="form-group">
-                 <div class="input-group">
-                     <span class="input-group-addon">@&nbsp;</span>
-                     <input type="email" class="form-control" placeholder="E-mail" />
-                 </div>
-             </form>
- 
-             <form class="form-group">
-                 <div class="input-group">
-                     <span class="input-group-addon">****</span>
-                     <input type="password" class="form-control" placeholder="Senha" />
-                 </div>
-             </form>
- 
-             <form class="form-group">
-                 <div class="input-group">
-                     <span class="input-group-addon">****</span>
-                     <input type="password" class="form-control" placeholder="Confirme a Senha" />
-                 </div>
-             </form>
-             <input type="submit" class="btn btn-default navbar-btn" value="Confirmar" name="bt-confirmar" />
-            -->
         </section>
 
         <footer id="footer">
-            <div class="container">
-                <p></p>
-            </div>
+            <div class="container-fluid">
+                <p>Copyright &copy; 2014 - BuskImoveis.Todos os direitos reservados. v. 1.0</p>
+            </div
         </footer>
     </body>
 </html>

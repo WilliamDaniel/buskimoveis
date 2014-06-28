@@ -59,7 +59,6 @@ public class VisitanteDao {
         ps.setString(2, visitante.getEmail());
         ps.setString(3, visitante.getTelefone());
         ps.setString(4, visitante.getSenha());                
-        ps.execute();
-        connection.commit();
+        ps.execute();        
     }
 }
