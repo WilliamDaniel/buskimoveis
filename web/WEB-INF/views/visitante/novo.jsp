@@ -50,8 +50,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"><h1>BuskImóveis</h1></a>
+                        </button>                        <a class="navbar-brand" href="#"><h1>BuskImóveis</h1></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
