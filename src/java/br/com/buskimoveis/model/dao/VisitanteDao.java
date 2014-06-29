@@ -61,4 +61,5 @@ public class VisitanteDao {
         ps.setString(4, visitante.getSenha());                
         ps.execute();        
     }
+  
 }
