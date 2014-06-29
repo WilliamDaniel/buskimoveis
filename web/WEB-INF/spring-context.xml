@@ -9,9 +9,8 @@
 						http://www.springframework.org/schema/beans 
 						http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 						http://www.springframework.org/schema/context 
-						http://www.springframework.org/schema/context/spring-context-4.0.xsd
-       http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd" xmlns:jdbc="http://www.springframework.org/schema/jdbc">
-						
+						http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+       						
     <mvc:annotation-driven />   
     
     <context:component-scan base-package="br.com.buskimoveis" />
@@ -30,8 +29,7 @@
         <property name="url" value="jdbc:postgresql://localhost:5432/buskimoveis" />
         <property name="username" value="postgres" />
         <property name="password" value="postgres" />
-    </bean>
- 
+    </bean> 
 </beans>
     
    

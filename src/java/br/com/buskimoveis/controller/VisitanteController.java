@@ -31,12 +31,6 @@ public class VisitanteController {
         ModelAndView mv = new ModelAndView("visitante/novo");
         return mv;
     }
-    
-     @RequestMapping(value = "/novo", method = RequestMethod.POST)
-    public ModelAndView storeData() {
-        ModelAndView mv = new ModelAndView("/");
-        return mv;
-    }
  
     @RequestMapping(method = RequestMethod.POST)
     public String cadastrar(Visitante visitante) {

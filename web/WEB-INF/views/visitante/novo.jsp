@@ -71,7 +71,7 @@
         <section class="container section" id="form-cadastro"><!-- /section -->
             <h1>Cadastro de pessoa física</h1>
 
-            <form class="form-group" method="post">
+            <form class="form-group" method="post"  action="<c:url value="/visitante" />">
 
                 <div class="input-group">
                     <span class="input-group-addon">Aa&nbsp;</span>
