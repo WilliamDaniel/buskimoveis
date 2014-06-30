@@ -1,7 +1,6 @@
 package br.com.buskimoveis.controller;
 
 import br.com.buskimoveis.model.dao.VisitanteDao;
-import br.com.buskimoveis.model.entity.Usuario;
 import br.com.buskimoveis.model.entity.Visitante;
 import java.sql.SQLException;
 import java.util.logging.Level;

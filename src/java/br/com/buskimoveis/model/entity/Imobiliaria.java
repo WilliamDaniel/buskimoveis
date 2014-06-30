@@ -5,8 +5,6 @@
  */
 package br.com.buskimoveis.model.entity;
 
-import java.util.List;
-
 /**
  *
  * @author Elessandra

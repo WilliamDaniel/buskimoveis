@@ -69,16 +69,16 @@
         <section class="container section" id="form-cadastro"><!-- /section -->
             <h1>Cadastre-se</h1>
 
-            <form class="form-group" method="post">
+            <form class="form-group" method="post" action="<c:url value="/imobiliaria" />">
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-font"></i></div></span>
-                    <input type="text" class="form-control input-validacao" placeholder="Razão Social" name="razao-social" />
+                    <input type="text" class="form-control input-validacao" placeholder="Razão Social" name="razaoSocial" />
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-font"></i></div></span>
-                    <input type="text" class="form-control input-validacao" placeholder="Nome Fantasia" name="nome-fantasia" />
+                    <input type="text" class="form-control input-validacao" placeholder="Nome Fantasia" name="nomeFantasia" />
                 </div>
 
                 <div class="input-group">
@@ -113,10 +113,12 @@
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-earphone"></i></div></span>
                     <input type="text" class="form-control input-validacao" placeholder="Telefone" name="telefone" maxlength="12" />
                 </div>
+            </form>
 
+            <form class="form-group" method="post" action="<c:url value="/visitante" />">
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-user"></i></div></span>
-                    <input type="text" class="form-control input-validacao input-destaque" placeholder="Nome do Usuário Administrativo" name="nome-usuario" maxlength="60" />
+                    <input type="text" class="form-control input-validacao input-destaque" placeholder="Nome do Usuário Administrativo" name="nome" maxlength="60" />
                 </div>
 
                 <div class="input-group">
