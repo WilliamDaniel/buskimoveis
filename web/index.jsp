@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset=UTF-8">
+        <meta charset="UTF-8">
         <title>Home</title>
         <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />" />
         <!-- css principal -->

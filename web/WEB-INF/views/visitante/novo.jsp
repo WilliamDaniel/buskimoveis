@@ -18,6 +18,7 @@
         <title>BuskImóveis - Cadastro</title>
         <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />" />
         <link rel="stylesheet" href="<c:url value="/css/normalize.css" />" />
+        <link rel="stylesheet" href="<c:url value="/css/style.main.css" />" />
         <link rel="stylesheet" href="<c:url value="/css/style.cadastro.visitante.css" />" />
 
         <script src="<c:url value="/js/jquery-1.11.1.js" />"></script>
@@ -25,21 +26,17 @@
         <script src="<c:url value="/js/jquery.cadastro.visitante.js" />"></script>
     </head>
     <body>
-        <header id="header" class="">
+        <header id="header">
             <nav class="navbar navbar-default" role="navigation" id="barra-info">
                 <div class="container-fluid">
                     <div class="row-fluid">
-                        <span>
-                            <p>Tem alguma dúvida? Envie um e-mail para <strong>info@buskimoveis.com</strong></p>
-                        </span>
-                        <span>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Entrar</a></li>
-                            </ul>
+                        <p>Tem alguma dúvida? Envie um e-mail para <strong><a href="#">info@buskimoveis.com</a></strong></p>
+                        <span class="navbar-top-link row">
+                            <a href="#" class="span12">Entrar</a>
+                            <a href="#" class="link-inativo">Cadastre-se</a>
                         </span>
                     </div>
             </nav>
-
             <nav class="navbar navbar-default" role="navigation" id="barra-principal">
 
                 <div class="container-fluid">
@@ -59,8 +56,7 @@
                         <ul class="nav navbar-nav" id="menu-navegacao">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">O BuskImóveis</a></li>
-                            <li><a href="#">Imobiliária</a></li>
-                            <li class="active"><a href="#">Cadastre-se</a></li>
+                            <li><a href="#">Anuncie</a></li>
                             <li><a href="#">Ajuda</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -69,37 +65,41 @@
         </header><!-- /header -->
 
         <section class="container section" id="form-cadastro"><!-- /section -->
-            <h1>Cadastro de pessoa física</h1>
+            <h1>Cadastre-se</h1>
 
-            <form class="form-group" method="post"  action="<c:url value="/visitante" />">
-
+            <form class="form-group" method="post">
                 <div class="input-group">
-                    <span class="input-group-addon">Aa&nbsp;</span>
-                    <input type="text" class="form-control input-validacao" placeholder="Nome" name="nome" />
+                    <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-user"></i></div></span>
+                    <input type="text" class="form-control input-validacao" placeholder="Nome" id="nome" name="nome" />
                 </div>
 
                 <div class="input-group">
-                    <span class="input-group-addon">&nbsp;@&nbsp;</span>
+                    <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-envelope"></i></div></span>
                     <input type="email" class="form-control input-validacao" placeholder="E-mail" name="email" />
                 </div>
 
                 <div class="input-group">
-                    <span class="input-group-addon">##&nbsp;</span>
+                    <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-earphone"></i></div></span>
                     <input type="text" class="form-control input-validacao" placeholder="Telefone" name="telefone" />
                 </div>
 
 
                 <div class="input-group">
-                    <span class="input-group-addon">****</span>
+                    <span class="input-group-addon"><div class="ajuste-form"><span>***</span></div></span>
                     <input type="password" class="form-control input-validacao" placeholder="Senha" maxlength="200" name="senha" />
                 </div>
 
                 <div class="input-group">
-                    <span class="input-group-addon">****</span>
+                    <span class="input-group-addon"><div class="ajuste-form"><span>***</span></div></span>
                     <input type="password" class="form-control input-validacao" placeholder="Confirme a Senha" maxlength="200"  />
                 </div>
-                <input type="submit" class="btn btn-default navbar-btn" value="Confirmar" name="bt-confirmar" id="bt-confirmar" />
+                <input type="submit" class="btn btn-default navbar-btn" value="Confirmar" id="bt-confirmar" />
             </form>
+
+            <span class="help-block">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                É obrigatório o preenchimento de todos os campos.
+            </span>
         </section>
 
         <footer id="footer">
