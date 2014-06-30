@@ -2,6 +2,7 @@ package br.com.buskimoveis.controller;
 
 import br.com.buskimoveis.model.dao.VisitanteDao;
 import br.com.buskimoveis.model.entity.Visitante;
+import br.com.buskimoveis.model.vo.UsuarioImobiliariaVo;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,15 +32,25 @@ public class VisitanteController {
         ModelAndView mv = new ModelAndView("visitante/novo");
         return mv;
     }
- 
+
+    //Cadastrar usuário da imobiliária
     @RequestMapping(method = RequestMethod.POST)
-    public String cadastrar(Visitante visitante) {
-        try {
-            visitanteDao.salvar(visitante);
-        } catch (SQLException ex) {
-            Logger.getLogger(VisitanteController.class.getName()).log(Level.SEVERE, null, ex);
+    public String cadastrar(UsuarioImobiliariaVo usuarioImobiliariaVo) {
+        if (usuarioImobiliariaVo.getIdImobiliaria() == null) {
+            try {
+                visitanteDao.salvar(usuarioImobiliariaVo.getUsuario());
+            } catch (SQLException ex) {
+                Logger.getLogger(VisitanteController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return "redirect:/visitante";
+        } else {
+            try {
+                visitanteDao.salvar(usuarioImobiliariaVo.getUsuario(), usuarioImobiliariaVo.getIdImobiliaria());
+            } catch (SQLException ex) {
+                Logger.getLogger(VisitanteController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return "redirect:/visitante";
         }
-        return "redirect:/visitante";        
     }
 
     @RequestMapping(method = RequestMethod.GET)

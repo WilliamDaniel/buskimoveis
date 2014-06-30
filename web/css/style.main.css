@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/*---------------Corpo-----------------*/
+body{
+	background-attachment: fixed;
+	background-color: #181818;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: auto;
+	height: auto;
+	background-position: inherit;
+	margin: auto;
+}
+
+p{
+	margin-left: 10%;
+	margin-top: 12px;
+}
+
+a,
+a:hover{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.ativo{
+	background-color: #ddd;
+}
+.link-ativo{
+	color: #FFE600;
+}
+
+.link-inativo,
+.link-inativo:hover{
+	text-decoration: none;
+	color: #bbb;
+}
+.navbar-top-link a{
+	background-color: rgba(0,0,0,0.3);
+	padding: 4px;
+	margin: 2px;
+	border-radius: 4px;
+}
+
+/*---------Barra de navegação----------*/
+#barra-info{
+	background-color: #089a88;
+	border-radius: 0px;
+	color: #fff;
+	position: relative;
+}
+
+#menu-navegacao{
+	margin-left: 23%;
+}
+
+.navbar.navbar-default{
+	margin: 0px;
+	background-color:#fff ;
+	border:0px;
+	border-radius: 0px;
+}
+
+.nav.navbar-nav li a{ color: #000; } /*cor dos links do menu de navegação*/
+
+.navbar-header h1{
+	background-color: #2A8778;
+	padding: 0px;
+	font-size: 17pt;
+	padding: 6px;
+	margin-top: -7%;
+	box-shadow: 3px 3px 2px 0px rgba(64,64,64,2);
+	font-family:fantasy;
+	color: #FFF;
+}
+
+.navbar-header h1:hover{
+	box-shadow: 3px 3px 2px 0px rgba(32,32,32,2);
+}
+
+.navbar-top-link{
+	position: absolute;
+	right: 3%;
+	bottom: 40%;
+	color: #fff;
+	font-family: Verdana, Arial;
+	font-weight: bold;
+	font-size: 7pt;
+	text-transform: uppercase;
+}
+.nav.navbar-nav.navbar-right a:hover{
+	color: #eee;
+	font-family: Verdana, Arial;
+}
+
+/*------------Formulário de cadastro--------*/
+#form-cadastro{
+	margin-top: 8%;
+	margin-bottom: 8%;
+	width: 60%;
+	padding-top: 1%;
+	padding-left: 8%;
+	padding-right: 8%;
+	padding-bottom: 2%;
+	background-color: rgba(0,0,0,0.6);
+	color: #fff;
+	position: relative;
+}
+
+#form-cadastro h1{
+	font-size: 40pt;
+	font-family: 'Adobe Caslon Pro', Georgia, Arial;
+}
+
+.form-group div{
+	margin-bottom:13px;
+}
+
+.input-group span{
+	background-color: #089a88;
+	color: #fff;
+}
+
+.input-group input{
+	border-radius:0px;
+}
+
+.input-group-addon{
+	border: none;
+}
+
+.input-destaque{
+	background-color: #D8FBF2;
+}
+.ajuste-form{
+	width: 20px;
+	height: 4px;
+	padding: 0px;
+	text-align: center;
+}
+
+.ajuste-form p{
+	margin-right: auto;
+	margin-top: 3px;
+	text-align: justify;
+}
+
+#bs-example-navbar-collapse-1 li{
+	font-size: 13pt;
+	font-weight: 700;
+	color: #111;
+	font-family: sans-serif;
+}
+
+#bs-example-navbar-collapse-1 li:hover{
+	background-color: #E9E9E9;
+	text-decoration: none;
+	list-style: none;
+}
+
+.btn{
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	border-radius: 0px;
+	border-color: #61D2D6;
+    width: 50%;
+    top: 10%;
+    color: #fff;
+    font-weight: 300;
+	outline: none;
+	padding: 1%;
+	font-size: 15pt;
+	font-family: Arial, 'Adobe Caslon Pro', Georgia;
+	text-transform: uppercase;
+}
+
+.btn:hover{
+	background-color: #089a88;
+	outline-style: none;
+	color: #fff;
+	border-color: transparent;
+}
+
+.btn:focus{
+	background-color: transparent;
+	color: #fff;
+}
+
+.help-block{
+	color: #FFF;
+	text-align: right;
+	position: relative;
+	top: 25px;
+}
+
+/*-------------Rodapé--------------*/
+.footer{
+	background-color: #000;
+}
+
+#footer{
+	position: relative;
+	margin-top: 0%;
+}
+
+#footer div{
+	height: 70px;
+	width: 100%;
+	
+	background-color: #181818;
+	position: relative;
+	bottom: 0px;
+}
+
+#footer p{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	text-align: center;
+	color: #aaa;
+}
+
+#footer p:hover{
+	color: #FFF;
+}

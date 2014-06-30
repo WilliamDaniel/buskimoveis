@@ -5,6 +5,7 @@
  */
 package br.com.buskimoveis.model.dao;
 
+import br.com.buskimoveis.model.entity.Usuario;
 import br.com.buskimoveis.model.entity.Visitante;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -60,5 +61,17 @@ public class VisitanteDao {
         ps.setString(3, visitante.getTelefone());
         ps.setString(4, visitante.getSenha());                
         ps.execute();        
-    }  
+    } 
+    
+    //Salvar usuário administrativo
+    public void salvar(Usuario usuario, Long idImobiliaria) throws SQLException {
+        String query = "insert into usuario(nome, email, senha, imobiliaria_fk) values(?,?,?,?)";
+        Connection connection = dataSource.getConnection();
+        PreparedStatement ps = connection.prepareStatement(query);
+        ps.setString(1, usuario.getNome());
+        ps.setString(2, usuario.getEmail());        
+        ps.setString(3, usuario.getSenha()); 
+        ps.setLong(4, idImobiliaria);
+        ps.execute();        
+    } 
 }

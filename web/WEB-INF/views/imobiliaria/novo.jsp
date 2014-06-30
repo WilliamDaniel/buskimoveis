@@ -25,6 +25,29 @@
         <!-- jquery de cadastro -->
         <script  src="<c:url value="/js/jquery.cadastro.visitante.js"/>" ></script>
 
+        <!-- Script para backend nos forms-->
+        <script>
+            $(function() {
+                $("#bt-confirmar").click(function() {
+                    //alert("Hhehehehe");
+                    //return false;
+                    var formData = $("#form-imobiliaria").serializeArray();
+                    var url = $("#form-imobiliaria").attr("action");
+                    $.post(url, formData, function(data) {
+                        if (!data || data === false) {
+                            alert("NOK");                            
+                        } else {
+                            $("#id-imobiliaria").val(data);
+                            $("#form-usuario").submit(); 
+                        }
+                    }).fail(function(jqXHR, textStatus, errorThrown) {
+                        alert("NOK");
+                    });
+                    return false;
+                });
+            });
+        </script>
+
     </head>
     <body>
         <header id="header">
@@ -69,7 +92,7 @@
         <section class="container section" id="form-cadastro"><!-- /section -->
             <h1>Cadastre-se</h1>
 
-            <form class="form-group" method="post" action="<c:url value="/imobiliaria" />">
+            <form id="form-imobiliaria" class="form-group" method="post" action="<c:url value="/imobiliaria" />">
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-font"></i></div></span>
@@ -115,20 +138,20 @@
                 </div>
             </form>
 
-            <form class="form-group" method="post" action="<c:url value="/visitante" />">
+            <form id="form-usuario" class="form-group" method="post" action="<c:url value="/visitante" />">
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-user"></i></div></span>
-                    <input type="text" class="form-control input-validacao input-destaque" placeholder="Nome do Usuário Administrativo" name="nome" maxlength="60" />
+                    <input type="text" class="form-control input-validacao input-destaque" placeholder="Nome do Usuário Administrativo" name="usuario.nome" maxlength="60" />
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-envelope"></i></div></span>
-                    <input type="email" class="form-control input-validacao input-destaque" placeholder="E-mail" name="email" maxlength="40" />
+                    <input type="email" class="form-control input-validacao input-destaque" placeholder="E-mail" name="usuario.email" maxlength="40" />
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><span>***</span></div></span>
-                    <input type="password" class="form-control input-validacao input-destaque" placeholder="Senha" maxlength="200" name="senha" />
+                    <input type="password" class="form-control input-validacao input-destaque" placeholder="Senha" maxlength="200" name="usuario.senha" />
                 </div>
 
                 <div class="input-group">
@@ -137,6 +160,7 @@
                 </div>
 
                 <input type="submit" class="btn btn-default navbar-btn" value="Confirmar" id="bt-confirmar" />
+                <input id="id-imobiliaria" type="hidden" name="idImobiliaria" />
             </form>
             <span class="help-block">
                 <span class="glyphicon glyphicon-exclamation-sign"></span>

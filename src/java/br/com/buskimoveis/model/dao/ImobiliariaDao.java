@@ -8,7 +8,9 @@ package br.com.buskimoveis.model.dao;
 import br.com.buskimoveis.model.entity.Imobiliaria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,10 +25,11 @@ public class ImobiliariaDao {
     @Autowired
     private DataSource dataSource;
 
-    public void salvar(Imobiliaria imobiliaria) throws SQLException {
+    public Imobiliaria salvar(Imobiliaria imobiliaria) throws SQLException {
         String query = "insert into imobiliaria(razaosocial, nomefantasia, cnpj, creci, rua, numero, bairro, cidade, cep, complemento, telefone) values(?,?,?,?,?,?,?,?,?,?,?)";
         Connection connection = dataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement(query);
+        PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);//retornar o id da imobiliaria
+        ResultSet resultSet;
         ps.setString(1, imobiliaria.getRazaoSocial());
         ps.setString(2, imobiliaria.getNomeFantasia());
         ps.setString(3, imobiliaria.getCnpj());
@@ -39,6 +42,11 @@ public class ImobiliariaDao {
         ps.setString(10, imobiliaria.getComplemento());
         ps.setString(11, imobiliaria.getTelefone());
         ps.execute();
+        resultSet = ps.getGeneratedKeys();
+        resultSet.next();
+        imobiliaria.setId(resultSet.getLong(1));
+        
+        return imobiliaria;
     }
 
 }

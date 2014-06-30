@@ -67,26 +67,26 @@
         <section class="container section" id="form-cadastro"><!-- /section -->
             <h1>Cadastre-se</h1>
 
-            <form class="form-group" method="post">
-                <div class="input-group">
+            <form class="form-group" method="post" action="<c:url value="/visitante" />">
+                <div class="input-group"> 
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-user"></i></div></span>
-                    <input type="text" class="form-control input-validacao" placeholder="Nome" id="nome" name="nome" />
+                    <input type="text" class="form-control input-validacao" placeholder="Nome" id="nome" name="usuario.nome" />
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-envelope"></i></div></span>
-                    <input type="email" class="form-control input-validacao" placeholder="E-mail" name="email" />
+                    <input type="email" class="form-control input-validacao" placeholder="E-mail" name="usuario.email" />
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><i class="glyphicon glyphicon-earphone"></i></div></span>
-                    <input type="text" class="form-control input-validacao" placeholder="Telefone" name="telefone" />
+                    <input type="text" class="form-control input-validacao" placeholder="Telefone" name="usuario.telefone" />
                 </div>
 
 
                 <div class="input-group">
                     <span class="input-group-addon"><div class="ajuste-form"><span>***</span></div></span>
-                    <input type="password" class="form-control input-validacao" placeholder="Senha" maxlength="200" name="senha" />
+                    <input type="password" class="form-control input-validacao" placeholder="Senha" maxlength="200" name="usuario.senha" />
                 </div>
 
                 <div class="input-group">

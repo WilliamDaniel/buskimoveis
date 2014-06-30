@@ -8,32 +8,33 @@ package br.com.buskimoveis.controller;
 import br.com.buskimoveis.model.dao.ImobiliariaDao;
 import br.com.buskimoveis.model.entity.Imobiliaria;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.portlet.ModelAndView;
-
 
 @Controller
 @RequestMapping(value = "/imobiliaria")
 public class ImobiliariaController {
-    ImobiliariaDao imobiliariaDao;    
+
+    @Autowired
+    ImobiliariaDao imobiliariaDao;
 
     @RequestMapping(value = "/novo", method = RequestMethod.GET)
     public ModelAndView cadastrar() {
         ModelAndView mv = new ModelAndView("imobiliaria/novo");
         return mv;
     }
-    
+
     @RequestMapping(method = RequestMethod.POST)
-    public String cadastrar(Imobiliaria imobiliaria) {
+    public @ResponseBody String cadastrar(Imobiliaria imobiliaria) {
         try {
-            imobiliariaDao.salvar(imobiliaria);
+            imobiliaria = imobiliariaDao.salvar(imobiliaria);
         } catch (SQLException ex) {
-            Logger.getLogger(ImobiliariaController.class.getName()).log(Level.SEVERE, null, ex);
+            return "false";
         }
-        return "redirect:/imobiliaria";        
+        return String.valueOf(imobiliaria.getId());
     }
 }
