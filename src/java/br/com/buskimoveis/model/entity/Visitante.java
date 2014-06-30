@@ -9,21 +9,9 @@ package br.com.buskimoveis.model.entity;
  *
  * @author Elessandra
  */
-public class Visitante {
+public class Visitante extends Usuario {
 
-    private Long id;
-    private String email;
-    private String senha;    
-    private String nome;
-    private String telefone;    
-        
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    private String telefone;
 
     public String getTelefone() {
         return telefone;
@@ -31,29 +19,5 @@ public class Visitante {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 }

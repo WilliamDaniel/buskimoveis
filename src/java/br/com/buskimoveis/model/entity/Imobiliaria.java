@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.buskimoveis.model.entity;
 
 import java.util.List;
@@ -12,22 +11,21 @@ import java.util.List;
  *
  * @author Elessandra
  */
-public class Imobiliaria { 
+public class Imobiliaria {
+
     private Long id;
-    private String email;
-    private String senha;
     private String razaoSocial;
     private String nomeFantasia;
     private String cnpj;
     private String creci;
-    private String rua; 
+    private String rua;
     private Integer numero;
     private String bairro;
     private String cidade;
     private String cep;
-    private String complemento;    
-    private List<Telefone> telefone;
-    
+    private String complemento;
+    private String telefone;    
+
     public String getRazaoSocial() {
         return razaoSocial;
     }
@@ -98,7 +96,7 @@ public class Imobiliaria {
 
     public void setCep(String cep) {
         this.cep = cep;
-    }   
+    }
 
     public String getComplemento() {
         return complemento;
@@ -108,11 +106,11 @@ public class Imobiliaria {
         this.complemento = complemento;
     }
 
-    public List<Telefone> getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(List<Telefone> telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }  
 
@@ -122,21 +120,5 @@ public class Imobiliaria {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 }
