@@ -10,21 +10,17 @@ package br.com.buskimoveis.model.entity;
  *
  * @author Elessandra
  */
-public enum Categoria {    
-    RESIDENCIAL, COMERCIAL, TEMPORADA;
+public enum StatusImovel {
+    DISPONIVEL, INDISPONIVEL;
 
     @Override
     public String toString() {
         switch(this){
-            case RESIDENCIAL:
-                return "Residencial";
-            case COMERCIAL:
-                return "Comercial";
-            case TEMPORADA:
-                return "Temporada";
+            case DISPONIVEL:
+                return "Disponível";
+            case INDISPONIVEL:
+                return "Indisponível";
         }
         return null;
-    }
-    
-    
+    }    
 }

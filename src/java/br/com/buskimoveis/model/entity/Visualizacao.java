@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class Visualizacao {
     private Long id;
-    private Date dataHora;
+    private Date dataHora; 
     private Visitante visitante;
     private Imovel imovel;
 
@@ -32,7 +32,7 @@ public class Visualizacao {
 
     public void setDataHora(Date dataHora) {
         this.dataHora = dataHora;
-    }
+    }    
 
     public Visitante getVisitante() {
         return visitante;
@@ -48,6 +48,5 @@ public class Visualizacao {
 
     public void setImovel(Imovel imovel) {
         this.imovel = imovel;
-    }  
-    
+    }
 }

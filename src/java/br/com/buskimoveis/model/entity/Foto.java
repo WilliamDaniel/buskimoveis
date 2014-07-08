@@ -12,8 +12,8 @@ package br.com.buskimoveis.model.entity;
  */
 public class Foto {
     private Long id;
-    private String foto;
-    private String observacao;
+    private String url;
+    private String descricao;
 
     public Long getId() {
         return id;
@@ -23,20 +23,20 @@ public class Foto {
         this.id = id;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getUrl() {
+        return url;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getObservacao() {
-        return observacao;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
     
     

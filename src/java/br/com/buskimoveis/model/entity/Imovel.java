@@ -6,6 +6,7 @@
 
 package br.com.buskimoveis.model.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -20,15 +21,13 @@ public class Imovel {
     private String cidade;
     private String cep;
     private String complemento;
-    private Integer preco;
-    private String status;
-    private Boolean disponibilidade;
-    private Integer vagaGaragem;
+    private BigDecimal preco; 
+    private StatusImovel statusImovel;    
     private String observacoes;
     private List<Comodo> comodo;
-    private List<Foto> foto;
+    private List<Foto> foto;  
     private Categoria categoria;
-    private Imobiliaria imobiliaria;
+    private Imobiliaria imobiliaria;    
 
     public Long getId() {
         return id;
@@ -84,39 +83,7 @@ public class Imovel {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
-    }
-
-    public Integer getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Integer preco) {
-        this.preco = preco;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Boolean isDisponibilidade() {
-        return disponibilidade;
-    }
-
-    public void setDisponibilidade(Boolean disponibilidade) {
-        this.disponibilidade = disponibilidade;
-    }
-
-    public Integer getVagaGaragem() {
-        return vagaGaragem;
-    }
-
-    public void setVagaGaragem(Integer vagaGaragem) {
-        this.vagaGaragem = vagaGaragem;
-    }
+    }    
 
     public String getObservacoes() {
         return observacoes;
@@ -140,15 +107,7 @@ public class Imovel {
 
     public void setFoto(List<Foto> foto) {
         this.foto = foto;
-    }
-    
-    public Imobiliaria getImobiliaria() {
-        return imobiliaria;
-    }
-
-    public void setImobiliaria(Imobiliaria imobiliaria) {
-        this.imobiliaria = imobiliaria;
-    } 
+    }   
 
     public Categoria getCategoria() {
         return categoria;
@@ -157,5 +116,28 @@ public class Imovel {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-    
+
+    public Imobiliaria getImobiliaria() {
+        return imobiliaria;
+    }
+
+    public void setImobiliaria(Imobiliaria imobiliaria) {
+        this.imobiliaria = imobiliaria;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
+    }
+
+    public StatusImovel getStatusImovel() {
+        return statusImovel;
+    }
+
+    public void setStatusImovel(StatusImovel statusImovel) {
+        this.statusImovel = statusImovel;
+    }
 }

@@ -15,8 +15,7 @@ import java.util.Date;
 public class Contato {
     private Long id;
     private Date dataHora;
-    private String assunto;    
-    private Imovel imovel;
+    private String assunto;  
     private Visualizacao visualizacao;
 
     public Long getId() {
@@ -42,14 +41,6 @@ public class Contato {
     public void setAssunto(String assunto) {
         this.assunto = assunto;
     }
-    
-    public Imovel getImovel() {
-        return imovel;
-    }
-
-    public void setImovel(Imovel imovel) {
-        this.imovel = imovel;
-    }
 
     public Visualizacao getVisualizacao() {
         return visualizacao;
@@ -58,5 +49,4 @@ public class Contato {
     public void setVisualizacao(Visualizacao visualizacao) {
         this.visualizacao = visualizacao;
     }
-
 }
