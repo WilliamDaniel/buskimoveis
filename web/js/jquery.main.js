@@ -16,7 +16,7 @@ $(document).ready(function(){
 // quando o usuário digitar no campo CNPJ
 	$('.cnpj').keyup(function(){
 	  var cnpj = this.value;
-
+	  
 		  $().bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", BIPBOP_FREE, {
 	      // passando o CPF digitado
 	      data: { documento: cnpj },
@@ -31,6 +31,10 @@ $(document).ready(function(){
 	      }
 	    });
     });
+
+    $('#link-logon').click(function(){
+		$('#logon').modal('toggle');
+	});
     
 });
 

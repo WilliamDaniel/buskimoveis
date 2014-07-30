@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*---------------Corpo-----------------*/
-html,body{
+body{
 	background-attachment: fixed;
 	background-position: inherit;
 	background-color: #FFF;
@@ -13,14 +13,14 @@ html,body{
 
 p{
 	margin-left: 10%; 
-	margin-top: 12px;
+	margin-top: 5px;
 	max-width: 100%;
+	font-size: 10pt;
 }
 
 a,
 a:hover{
 	color: #FFF;
-	text-decoration: none;
 }
 
 .ativo{ background-color: #ddd; }
@@ -36,11 +36,18 @@ a:hover{
 	color: #bbb;
 }
 
+.navbar-top-link{
+	position: relative;
+	top: 11%;
+}
+
 .navbar-top-link a{
 	background-color: rgba(0,0,0,0.3);
 	padding: 4px;
 	margin: 2px;
 	border-radius: 4px;
+	font-size: 6pt;
+	position: relative;
 }
 
 #barra-top{
@@ -64,18 +71,16 @@ a:hover{
 
 .nav.navbar-nav li a{ color: #000; } 
 
-.navbar-header h1{
-	background-color: #2A8778;
-	padding: 0px;
-	font-size: 17pt;
-	font-family:fantasy;
-	padding: 6px;
-	margin-top: -7%;
+figure.logo{
+	background-image: url(../img/logo.png);
+	position: absolute;
+	top: -20%;
+	width: 140px;
+	height: 39px;
 	box-shadow: 3px 3px 2px 0px rgba(64,64,64,2);
-	color: #FFF;
 }
 
-.navbar-header h1:hover{ box-shadow: 3px 3px 2px 0px rgba(32,32,32,2); }
+figure.logo:hover{ box-shadow: 3px 3px 2px 0px rgba(32,32,32,2); }
 
 .navbar-top-link{
 	position: absolute;
@@ -93,12 +98,53 @@ a:hover{
 	font-family: Verdana, Arial;
 }
 
+#form-logon input{
+	top:10px;
+}
+
+#form-logon,
+div.modal-content{
+	background-color: #10283E;
+}
+.modal{
+	margin-top: 10%;
+}
+.modal-content{
+	background-color: #fff;
+}
+
+.modal-header{
+	color: #FFF;
+}
+.modal-footer,
+.modal-header{
+	background-color: #4E8C87;
+}
+
+.modal div{
+	margin-top: 6%;
+}
+.modal-footer,
+.modal-footer a{
+	color: #FFF;
+	position: relative;
+	font-family: Arial;
+}
+.modal-footer input[type='submit']{
+	background-color: #10283E;
+	padding: 5px;
+	border-radius: 3px;
+}
+.close span{
+	color: red;
+}
+
 /*------------Formulário de cadastro--------*/
 #form-cadastro{
 	color: #fff;
 	position: relative;
-	margin-top: 8%;
-	margin-bottom: 8%;
+	margin-top: 7%;
+	margin-bottom: 7%;
 	padding-top: 1%;
 	padding-left: 8%;
 	padding-right: 8%;
@@ -176,7 +222,8 @@ a:hover{
   color: #FFF;
   text-align: right; 
   position: relative; 
-  top: 25px; }
+  top: 25px; 
+}
 
 /*-------------Rodapé--------------*/
 .footer{ background-color: #000; }
@@ -197,4 +244,4 @@ a:hover{
 	text-align: center;
 	color: #aaa;
 }
-#footer p:hover{ color: #FFF; }
+

@@ -16,7 +16,7 @@
         <h1>Listar Todos</h1>
         <ul>
             <c:forEach items="${visitantes}" var="visitante">
-                <li>${visitante.id}, ${visitante.nome}, ${visitante.telefone}, ${visitante.email}</li>                
+                <li>${visitante.id}, ${visitante.nome}, ${visitante.telefone}, ${visitante.email}, ><a href="visitante/${visitante.id}/alterar">Alterar</a> <a href="visitante/${visitante.id}/excluir">Excluir</a> </li>                
             </c:forEach>
         </ul>
     </body>

@@ -9,9 +9,10 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.portlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/visitante")
@@ -20,7 +21,7 @@ public class VisitanteController {
     @Autowired
     private VisitanteDao visitanteDao;
 
-    //@RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ModelAndView listar() {
         ModelAndView mv = new ModelAndView("visitante/listagem");
         mv.addObject("visitantes", visitanteDao.lerTodos());
@@ -35,28 +36,45 @@ public class VisitanteController {
 
     //Cadastrar usuário da imobiliária
     @RequestMapping(method = RequestMethod.POST)
-    public String cadastrar(UsuarioImobiliariaVo usuarioImobiliariaVo) {
+    public ModelAndView cadastrar(UsuarioImobiliariaVo usuarioImobiliariaVo) {
         if (usuarioImobiliariaVo.getIdImobiliaria() == null) {
             try {
                 visitanteDao.salvar(usuarioImobiliariaVo.getUsuario());
             } catch (SQLException ex) {
                 Logger.getLogger(VisitanteController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            return "redirect:/visitante";
+
         } else {
             try {
                 visitanteDao.salvar(usuarioImobiliariaVo.getUsuario(), usuarioImobiliariaVo.getIdImobiliaria());
             } catch (SQLException ex) {
                 Logger.getLogger(VisitanteController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            return "redirect:/visitante";
         }
+        ModelAndView mv = new ModelAndView("redirect:/visitante");
+        return mv;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String listar(ModelMap model) {
-        model.addAttribute("visitantes", visitanteDao.lerTodos());
-        return "visitante/listagem";
+    @RequestMapping(value = "/{id}/alterar", method = RequestMethod.GET)
+    public ModelAndView update(@PathVariable Long id) {
+        Visitante visitante = visitanteDao.lerVisitante(id);
+        ModelAndView mv = new ModelAndView("/visitante/novo");
+        mv.addObject("visitante", visitante);
+        return mv;
+    }
+
+    @RequestMapping(value = "/visitante/{id}/alterar", method = RequestMethod.POST)
+    public ModelAndView update(Visitante visitante) {
+        visitanteDao.update(visitante);
+        ModelAndView mv = new ModelAndView("redirect:/visitante");
+        return mv;
+    }
+
+    @RequestMapping(value = "/{id}/excluir", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable Long id) {
+        visitanteDao.excluir(id);
+        ModelAndView mv = new ModelAndView("redirect:/visitante");
+        return mv;
     }
 
 }

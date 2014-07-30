@@ -41,7 +41,7 @@ public class VisitanteDao {
                 Visitante visitante = new Visitante();
                 visitante.setId(resultSet.getLong("id"));
                 visitante.setEmail(resultSet.getString("email"));
-                visitante.setSenha(resultSet.getString("senha"));                
+                visitante.setSenha(resultSet.getString("senha"));
                 visitante.setNome(resultSet.getString("nome"));
                 visitante.setTelefone(resultSet.getString("telefone"));
                 visitantes.add(visitante);
@@ -52,6 +52,41 @@ public class VisitanteDao {
         return visitantes;
     }
 
+    public Visitante lerVisitante(Long id) {
+        Visitante visitante = new Visitante();
+        String query = "select * from usuario where id = ?";
+        try {
+            Connection connection = dataSource.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setLong(1, id);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                visitante.setId(resultSet.getLong("id"));
+                visitante.setNome(resultSet.getString("nome"));
+                visitante.setEmail(resultSet.getString("email"));
+                visitante.setSenha(resultSet.getString("senha"));
+                visitante.setTelefone(resultSet.getString("telefone"));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(VisitanteDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return visitante;
+    }
+
+    public void excluir(Long id) {
+        String query = "delete from usuario where id = ?";
+        try {
+            Connection connection = dataSource.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setLong(1, id);
+            ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(VisitanteDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
     public void salvar(Visitante visitante) throws SQLException {
         String query = "insert into usuario(nome, email, telefone, senha) values(?,?,?,?)";
         Connection connection = dataSource.getConnection();
@@ -59,19 +94,37 @@ public class VisitanteDao {
         ps.setString(1, visitante.getNome());
         ps.setString(2, visitante.getEmail());
         ps.setString(3, visitante.getTelefone());
-        ps.setString(4, visitante.getSenha());                
-        ps.execute();        
-    } 
-    
+        ps.setString(4, visitante.getSenha());
+        ps.execute();
+    }
+
     //Salvar usuário administrativo
     public void salvar(Usuario usuario, Long idImobiliaria) throws SQLException {
         String query = "insert into usuario(nome, email, senha, imobiliaria_fk) values(?,?,?,?)";
         Connection connection = dataSource.getConnection();
         PreparedStatement ps = connection.prepareStatement(query);
         ps.setString(1, usuario.getNome());
-        ps.setString(2, usuario.getEmail());        
-        ps.setString(3, usuario.getSenha()); 
+        ps.setString(2, usuario.getEmail());
+        ps.setString(3, usuario.getSenha());
         ps.setLong(4, idImobiliaria);
-        ps.execute();        
-    } 
+        ps.execute();
+    }
+
+    public void update(Visitante visitante) {
+        String query = "update usuario set nome = ?, telefone= ?, senha=? where id = ?";        
+        try {
+            Connection connection = dataSource.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, visitante.getNome());
+           // ps.setString(2, visitante.getEmail());
+            ps.setString(2, visitante.getTelefone());
+            ps.setString(3, visitante.getSenha());
+            ps.setLong(4, visitante.getId());
+            ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(VisitanteDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
 }
